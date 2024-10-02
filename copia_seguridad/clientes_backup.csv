@@ -1,0 +1,67 @@
+id,nombre,apellidos,edad,modalidad,fecha_cita,sexo,movil,email,informacion
+2,Begoña,fernandez Sierra,51,Quiromasaje,2024-07-14,M,655471026,begofer.lizard@gmail.com,"Dolores Múltiples 
+
+ Hombro Izquierdo
+* Manguito rotador
+* Síndrome Subacromial
+* Acromion tipo 2
+* Lesión biceps."
+13,Ainhoa,García Fernandez,15,Quiromasaje,2024-09-01,M,None,None,None
+17,Mónica,Sal Gonzales,53,Pilates,2024-09-02,M,625520162,None,"Enfermedades: Hernias Discales (L4,L5)
+Embarazos: 2 (2 Cesáreas)
+Medicación: Ibus Voltaren (a veces)
+Operaciones: Pecho, Apendicitis, 2 Cesáreas
+Empieza primer mes de pilates con lesión en el hombro izquierdo
+
+Profesión: Encargada de establecimiento
+Observaciones: Mucho estrés y físico también"
+20,Sebastián,Quiroz,33,Quiromasaje,2024-09-18,H,627899076,,"Viene a la primera cita por contractura en la espalda y piernas
+Profesión: Técnico de iluminación
+Vida: Activa
+Deportes: Tenis"
+1,Javier,Fiestas Botella,46,Quiromasaje,2024-07-03,,,,Sin Información
+9,Alvaro,Fontes Blanco,53,Quiromasaje,2024-07-31,H,619011044,None,Sin Información
+8,Agata,Gregoire García,29,Quiromasaje,2024-07-30,M,657084985,None,Sin Información
+6,Beatriz,Goñi Rodriguez,51,Quiromasaje,2024-08-28,M,630903238,None,Sin Información
+5,Ali,Albani,40,Quiromasaje,2024-07-27,H,+966555580773,None,Sin Información
+4,Aurore,Berger,26,Quiromasaje,2024-07-24,M,+33771271298,None,Sin Información
+7,Rosa,Franco Visso,0,Quiromasaje,2024-07-30,M,669319938,None,Sin Información
+21,Javier,Rincón Bernal,50,Quiromasaje,2024-09-24,H,627467042,None,"Profesión: Abogado
+Estilo de vida: Activo
+Deporte: Running maraton y gimnasio
+Refiere haber tenido en el pasado pubalgia durante un año. Recibió tratamiento con fisio. Su fisio es Paula Tudela, Masajista Silvia Sánchez"
+10,Raúl,García Cuesta,46,Quiromasaje,2024-07-01,H,655471025,raul_lizard@hotmail.com,Sin Información
+11,Maribel,Cuesta Oreja,65,Quiromasaje,2024-08-06,M,None,None,Sin Información
+12,Samir,Abou,38,Quiromasaje,2024-08-09,H,,,Sin Información
+3,Eduardo,Gaitan Garcia,34,Quiromasaje,2024-07-01,H,686817165,None,Doleres de Espalda por carga y descarga de elemntos para el catering con dolores en espalda y hombros y varios daños añadidos
+18,Patricia,Díaz Doblas,47,Pilates,2024-09-02,M,,,Clases de Pilates lunes y miercoles de 20:00 a 21:00
+14,Niimate,Draoui,40,Quiromasaje,2024-09-01,M,662512515,None,"Motivos de la Consulta: Dolor cervical
+Enfermedades: No
+Operaciones: Cesárea
+Embarazos: 2
+Medicación: No
+Observaciones:
+
+Profesión: Limpieza"
+16,Montserrat,Buitrago Román,44,Quiromasaje,2024-09-07,M,687804667,None,"Operaciones: No
+Embarazos: 2 (Parto Natural)
+Medicamentos: No
+Enfermedades: No
+
+Profesión: Oficinista
+Observaciones:"
+15,Eugenia,cano,47,Quiromasaje,2024-09-07,M,661416626,None,"Operaciones: Vegetaciones
+Enfermedades: Hipertensión tratada
+Medicación: Para la Hipertensión
+Embarazos: No
+
+Profesión: Comercial
+Observaciones:"
+19,Juanma,Cebrián Robles,31,Quiromasaje,2024-09-13,H,653340124,None,"Opereciones: No
+Enfermedades: Hipotiroidismo
+Medicamentos: Levotiroxina
+
+Profesión: Ingeniero
+Dolor de espalda, cuello y lumbar. 
+
+Observaciones: Veo desviación de columna. Cliente hace ejercicios de fuerza con carga en la espalda. No estira después del trabajo de fuerza."
