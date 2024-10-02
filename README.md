@@ -1,26 +1,28 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README - Aplicación</title>
-</head>
-<body>
-    <header>
-        <h1>README - Aplicación</h1>
-    </header>
+# README - Aplicación
 
-    <main>
-        <section>
-            <h2>Descripción</h2>
-            <p>Esta aplicación tiene como objetivo gestionar una base de datos de personas y monitorear factores críticos a través de formularios personalizados y gráficos visualizadores.</p>
-        </section>
+## Descripción
+Esta aplicación tiene como objetivo gestionar una base de datos de personas y monitorear factores críticos a través de formularios personalizados y gráficos visualizadores.
 
-        <section>
-            <h2>Requisitos</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>PHP</li>
+## Requisitos
+- HTML5
+- PHP
+- MySQL
+- API de almacenamiento en la nube (Dropbox, Google Drive, etc.)
+
+## Instalación
+1. Clona el repositorio en tu servidor local.
+2. Configura la base de datos en `config.php` con tus credenciales MySQL.
+3. Importa las tablas necesarias usando el archivo SQL proporcionado.
+4. Instala las dependencias necesarias.
+
+## Uso
+1. Accede a la aplicación a través del navegador.
+2. Llena los formularios de datos de las personas.
+3. Monitorea el progreso utilizando los gráficos visualizadores.
+
+## Autor
+Desarrollado por [Tu Nombre].
+
                 <li>MySQL</li>
                 <li>API de almacenamiento en la nube (Dropbox, Google Drive, etc.)</li>
             </ul>
