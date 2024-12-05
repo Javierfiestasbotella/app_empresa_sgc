@@ -2,3 +2,5 @@
 *.env
 config/database.yml
 *.db
+config.json
+credentials.py

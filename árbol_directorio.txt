@@ -1,0 +1,19 @@
+Listado de rutas de carpetas para el volumen Windows
+El número de serie del volumen es 30D3-6F6E
+C:.
+¦   .gitignore
+¦   Facturacion.xlsx
+¦   Facturacion_julio_2024.xlsx
+¦   favicon.ico
+¦   logo copy.png
+¦   logo.png
+¦   main.py
+¦   README.md
+¦   árbol_directorio.txt
+¦   
++---copia_seguridad
+        backup_clientes_db.sql
+        backup_clientes_db_20241001_120616.backup
+        citas_backup.csv
+        clientes_backup.csv
+        

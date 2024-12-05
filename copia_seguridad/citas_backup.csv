@@ -1,8 +1,12 @@
 id,cliente_id,fecha_cita,notas
 1,1,2024-07-03,"Dolor escápula derecha con un dolor hasta el cuello, dejandolo rígido"
 2,1,2024-07-06,Dolor en la espalda por coger peso indebidamente. Aplico calor y frio con masaje sobre la zona
+52,21,2024-10-09,"Masaje descarga. Kms en una semana 70km. 
+No dolor en rodilla derecha, en la primera sesión molestaba un poco la rodilla. Descargo isquios, cuadriceps, gemelos, soleos, tendón de aquiles y pies."
 8,4,2024-07-24,Quiromasaje cuerpo completo relajante
 17,7,2024-07-30,Dolor Cuello y zona lumbar e iliaco
+53,11,2024-10-11,"Masaje lumbar, hombros y cuello. Dolor a la palpación a la altura del deltoides, dolor en movimiento abducción del hombro izquierdo. Sospecho síndrome acromio clavicular y daño en manguito rotador."
+54,3,2024-10-02,Dolor en muñecas y antebrazos. Alpalda alta y cuello
 21,2,2024-07-04,"1ª Sesión
 Hombro
 Espalda"
@@ -47,6 +51,8 @@ El cliente cuenta que el día anterior notó un pequeño dolor en el tobillo. Al
 4,3,2024-07-01,"1ªSesión
 Masaje de espalda, hombros y cuello.
 Cliente refiere molestias y sobrecarga en los hombros."
+55,21,2024-10-01,"Cliente viene a masaje deportivo. Carga cuadriceps derecho, isquio izquierdo"
+56,3,2024-10-04,"Dolor en hombro y cuello por contracturas. Destenso, quito contracturas y relajo"
 28,10,2024-07-01,"1ª Sesión
 Masaje descontracturante lumbares, espalda media, alta y cuello. Contractura trapecio."
 29,2,2024-08-07,"Masaje quiro en silla de manguito rotador, espalda y cuello.
@@ -92,3 +98,10 @@ Se observa desviación de columna. Cliente hace ejercicio de fuerza con carga de
 49,20,2024-09-18,Contracturas en espalda y piernas. Quiro 1 h. Buen estado engeneral. Tensión en trapecio ycuello
 50,21,2024-09-24,"Masaje de descarga
 Contractura Isquio derecho, cuadriceps, molestia rodilla. Descargo también tendón de aquiles."
+51,23,2024-10-11,"Asima acude por primera vez a consulta por dolor de espalda y cuello. Por la tensión que hay en cuello y mandíbula creo que tiene también bruxismo. Libero tensión de mandíbula, cuello y espalda. Tambiñen repaso zona lumbar. Recomiendo ejercicios de movilidad y estiramientos"
+57,21,2024-10-09,Javi vuelve para descargar musculatura por sobrecarga en entrenamientos de carrera como entrenamiento Maratón de Málaga
+58,23,2024-10-10,"Asima viene por dolor en cervical, espalda alta y baja-zona lumbar.
+Hago masaje completo de lumbar, espalda. cervical"
+59,23,2024-10-30,Viene a probar una clase de Qigong
+60,11,2024-10-10,Quiromasaje hombro. Aplico vendaje neuromuscular
+61,3,2024-10-26,Cliente vuelve por problemas de espalda y hombros.

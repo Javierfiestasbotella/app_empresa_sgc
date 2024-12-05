@@ -9,6 +9,18 @@ import os
 # Importar las librerías necesarias
 import subprocess
 import datetime
+import sys
+
+# Función para obtener la ruta del recurso
+def resource_path(relative_path):
+    """Obtiene la ruta absoluta basada en el directorio del script principal."""
+    try:
+        # PyInstaller crea una carpeta temporal y guarda el path en _MEIPASS
+        base_path = sys._MEIPASS
+    except AttributeError:
+        # Base_path será el directorio donde se encuentra este script
+        base_path = os.path.abspath(os.path.dirname(__file__))
+    return os.path.join(base_path, relative_path)
 
 
 # Ruta del directorio donde se guardarán las copias de seguridad
@@ -126,7 +138,10 @@ light_mauve = "#cd00cd"  # Puedes ajustar el código de color según prefieras
 
 # Crear ventana principal
 root = tk.Tk()
-root.iconbitmap('app_empresa_sgc/favicon.ico')
+#root.iconbitmap('app_empresa_sgc/favicon.ico')
+root.iconbitmap(resource_path('favicon.ico'))
+
+
 root.title("Gestión de Clientes y Citas - Silvia García Cuesta")
 root.geometry("1200x700")
 root.configure(bg=blanco)  # Fondo blanco para la ventana principal
@@ -281,7 +296,9 @@ def agregar_cliente():
     
     top = tk.Toplevel(root)
     top.title("Agregar Cliente")
-    top.iconbitmap('app_empresa_sgc/favicon.ico')
+    top.iconbitmap(resource_path('favicon.ico'))
+
+    #top.iconbitmap('app_empresa_sgc/favicon.ico')
     
     tk.Label(top, text="Nombre").grid(row=0, column=0, padx=10, pady=5)
     entry_nombre = tk.Entry(top)
@@ -374,7 +391,9 @@ def editar_cliente():
     
     top = tk.Toplevel(root)
     top.title("Editar Cliente")
-    top.iconbitmap('app_empresa_sgc/favicon.ico')
+    top.iconbitmap(resource_path('favicon.ico'))
+
+    #top.iconbitmap('app_empresa_sgc/favicon.ico')
 
     
     tk.Label(top, text="Nombre").grid(row=0, column=0, padx=10, pady=5)
@@ -500,7 +519,9 @@ def buscar_cliente():
 
     top = tk.Toplevel(root)
     top.title("Buscar Cliente")
-    top.iconbitmap('app_empresa_sgc/favicon.ico')
+    top.iconbitmap(resource_path('favicon.ico'))
+
+    #top.iconbitmap('app_empresa_sgc/favicon.ico')
     
     tk.Label(top, text="ID").grid(row=0, column=0, padx=10, pady=5)
     entry_id = tk.Entry(top)
@@ -517,7 +538,9 @@ def mostrar_ficha_cliente(cliente):
     
     top = tk.Toplevel(root)
     top.title(f"Ficha de {nombre} {apellidos}")
-    top.iconbitmap('app_empresa_sgc/favicon.ico')
+    top.iconbitmap(resource_path('favicon.ico'))
+
+    #top.iconbitmap('app_empresa_sgc/favicon.ico')
     top.lift()  # Eleva la ventana
     top.focus_force()  # Obliga a que la ventana tenga el foco
     top.grab_set()  # Captura los eventos del mouse y teclado en esta ventana
@@ -635,7 +658,9 @@ def mostrar_ficha_cliente(cliente):
         # Creamos una nueva ventana para mostrar las notas de la cita seleccionada
         ventana_notas = tk.Toplevel(root)
         ventana_notas.title(f"Notas de la cita {fecha_cita}")
-        ventana_notas.iconbitmap('app_empresa_sgc/favicon.ico')
+        ventana_notas.iconbitmap(resource_path('favicon.ico'))
+
+        #ventana_notas.iconbitmap('app_empresa_sgc/favicon.ico')
 
         # Añadimos un label para mostrar las notas de la cita
         tk.Label(ventana_notas, text=notas, wraplength=500).pack(padx=20, pady=20)
@@ -680,7 +705,10 @@ def agregar_cita():
     top = tk.Toplevel(root)
     top.title("Agregar Cita")
     top.geometry("400x300")
-    top.iconbitmap('app_empresa_sgc/favicon.ico')
+    top.iconbitmap(resource_path('favicon.ico'))
+    #top.iconbitmap(resource_path('app_empresa_sgc/favicon.ico'))
+
+    #top.iconbitmap('app_empresa_sgc/favicon.ico')
     
     tk.Label(top, text="Cliente ID").grid(row=0, column=0, padx=10, pady=5)
     entry_cliente_id = tk.Entry(top)
@@ -726,7 +754,9 @@ def editar_cita():
     top = tk.Toplevel(root)
     top.title("Editar Cita")
     top.geometry("600x400")
-    top.iconbitmap('app_empresa_sgc/favicon.ico')
+    top.iconbitmap(resource_path('favicon.ico'))
+
+    #top.iconbitmap('app_empresa_sgc/favicon.ico')
 
     tk.Label(top, text="Seleccione una cita para editar:").pack(pady=10)
 
@@ -751,7 +781,9 @@ def editar_cita():
 
         # Crear ventana para editar la cita
         top_edit = tk.Toplevel(top)
-        top.iconbitmap('app_empresa_sgc/favicon.ico')
+        top.iconbitmap(resource_path('favicon.ico'))
+
+        #top.iconbitmap('app_empresa_sgc/favicon.ico')
         top_edit.title("Editar Cita")
         top_edit.geometry("400x300")
 
@@ -803,7 +835,9 @@ def borrar_cita():
     top = tk.Toplevel(root)
     top.title("Seleccionar Cita para Borrar")
     top.geometry("400x400")
-    top.iconbitmap('app_empresa_sgc/favicon.ico')
+    top.iconbitmap(resource_path('favicon.ico'))
+
+    #top.iconbitmap('app_empresa_sgc/favicon.ico')
 
     # Frame para mostrar las citas del cliente seleccionado
     frame_citas = tk.Frame(top)
