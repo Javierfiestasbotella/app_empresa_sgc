@@ -652,6 +652,16 @@ def mostrar_ficha_cliente(cliente):
             messagebox.showerror("Error", f"No se pudieron cargar las citas: {e}")
         finally:
             conn.close()
+         Botón para editar directamente desde la ficha
+        def abrir_edicion_desde_ficha():
+            top.destroy()
+            for item in tree_clientes.get_children():
+                if tree_clientes.item(item)["values"][0] == cliente_id:
+                    tree_clientes.selection_set(item)
+                    break
+            editar_cliente()
+
+        ttk.Button(top, text="Editar Cliente", command=abrir_edicion_desde_ficha).pack(pady=10)
 
     # ----------------------------------------------------------
     # Mostrar las notas de la cita seleccionada en una nueva ventana
@@ -705,6 +715,13 @@ def mostrar_ficha_cliente(cliente):
 # Funciones para CRUD de Citas
 def agregar_cita():
     def elegir_cliente():
+        def filtrar_clientes(*args):
+            texto = filtro.get().lower()
+            listbox.delete(0, tk.END)
+            for nombre in nombres_filtrados:
+                if texto in nombre.lower():
+                    listbox.insert(tk.END, nombre)
+
         def seleccionar_cliente(event):
             seleccion = listbox.curselection()
             if seleccion:
@@ -722,7 +739,11 @@ def agregar_cita():
         top_lista.title("Seleccionar Cliente")
         top_lista.iconbitmap(resource_path('favicon.ico'))
 
-        tk.Label(top_lista, text="Selecciona un cliente").pack(pady=5)
+        tk.Label(top_lista, text="Buscar por nombre o apellido:").pack(pady=5)
+        filtro = tk.StringVar()
+        filtro.trace_add("write", filtrar_clientes)
+        entry_busqueda = tk.Entry(top_lista, textvariable=filtro)
+        entry_busqueda.pack(pady=5)
 
         frame = tk.Frame(top_lista)
         frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
@@ -737,6 +758,7 @@ def agregar_cita():
 
         conn = connect_db()
         nombre_a_id = {}
+        nombres_filtrados = []
         if conn:
             try:
                 cur = conn.cursor()
@@ -745,6 +767,7 @@ def agregar_cita():
                 for cid, nombre, apellidos in clientes:
                     nombre_completo = f"{nombre} {apellidos}"
                     listbox.insert(tk.END, nombre_completo)
+                    nombres_filtrados.append(nombre_completo)
                     nombre_a_id[nombre_completo] = cid
             except Exception as e:
                 messagebox.showerror("Error", f"No se pudieron cargar los clientes: {e}")
@@ -754,39 +777,28 @@ def agregar_cita():
         listbox.bind("<<ListboxSelect>>", seleccionar_cliente)
 
     def submit():
-	    # Validar y normalizar el campo sexo
-	    sexo_raw = entry_sexo.get().strip().lower()
-	    if sexo_raw in ["h", "hombre"]:
-	        sexo = "H"
-	    elif sexo_raw in ["m", "mujer"]:
-	        sexo = "M"
-	    elif sexo_raw == "":
-	        sexo = None
-	    else:
-	        messagebox.showerror("Error en Sexo", "El campo sexo debe ser 'Hombre' o 'Mujer' (o H/M)")
-	        return
-	
-	    conn = connect_db()
-	    if conn:
-	        try:
-	            cur = conn.cursor()
-	            cur.execute(
-	                sql.SQL("UPDATE clientes SET nombre=%s, apellidos=%s, edad=%s, modalidad=%s, fecha_cita=%s, sexo=%s, movil=%s, email=%s, informacion=%s WHERE id=%s"),
-	                (entry_nombre.get(), entry_apellidos.get(), entry_edad.get(), entry_modalidad.get(), entry_fecha_cita.get(),
-	                 sexo,
-	                 entry_movil.get() if entry_movil.get() else None,
-	                 entry_email.get() if entry_email.get() else None,
-	                 entry_informacion.get("1.0", tk.END).strip() if entry_informacion.get("1.0", tk.END).strip() else None,
-	                 cliente_id)
-	            )
-	            conn.commit()
-	            messagebox.showinfo("Éxito", "Cliente actualizado exitosamente")
-	            top.destroy()
-	            cargar_datos()
-	        except Exception as e:
-	            messagebox.showerror("Error", f"No se pudo actualizar el cliente: {e}")
-	        finally:
-	            conn.close()
+        cliente_id = entry_cliente_id.get()
+        fecha_cita = entry_fecha_cita.get()
+        notas = entry_notas.get("1.0", tk.END).strip()
+
+        if not cliente_id or not fecha_cita:
+            messagebox.showerror("Error", "Por favor, selecciona un cliente y una fecha.")
+            return
+
+        conn = connect_db()
+        if conn:
+            try:
+                cur = conn.cursor()
+                cur.execute("INSERT INTO citas (cliente_id, fecha_cita, notas) VALUES (%s, %s, %s)",
+                            (cliente_id, fecha_cita, notas if notas else None))
+                conn.commit()
+                messagebox.showinfo("Éxito", "Cita agregada correctamente.")
+                top.destroy()
+                cargar_datos()
+            except Exception as e:
+                messagebox.showerror("Error", f"No se pudo agregar la cita: {e}")
+            finally:
+                conn.close()
 
     top = tk.Toplevel(root)
     top.title("Agregar Cita")
@@ -798,8 +810,7 @@ def agregar_cita():
     entry_cliente_nombre.grid(row=0, column=1, padx=10, pady=5)
     tk.Button(top, text="Elegir Cliente", command=elegir_cliente).grid(row=0, column=2, padx=10)
 
-    # Campo oculto para ID del cliente
-    entry_cliente_id = tk.Entry(top)
+    entry_cliente_id = tk.Entry(top)  # Campo oculto
     entry_cliente_id.grid_forget()
 
     tk.Label(top, text="Fecha de Cita").grid(row=1, column=0, padx=10, pady=5)
